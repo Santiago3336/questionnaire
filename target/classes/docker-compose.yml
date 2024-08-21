@@ -1,0 +1,11 @@
+version: '3.0'
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=sourvey_jr
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./database/ddl.sql:/docker-entrypoint-initdb.d/ddl.sql
